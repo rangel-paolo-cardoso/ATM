@@ -10,24 +10,25 @@ The day-to-day life of a developer is full of demands and here will be no differ
 
 - To have access to all transaction made.
 
-⚠️**Remeber:** ⚠️the company you represent follows the Test Driven Development (TDD) practice to develop their systems. Check the image below to remember how it works: 👇
+⚠️**Remember:** ⚠️the company you represent follows the Test Driven Development (TDD) practice to develop their systems. Check the image below to remember how it works: 👇
 
 ![TDDChart](img/tdd_chart.png)
 
-Primeiro vamos desenvolver os testes e depois as classes desse sistema de caixa eletrônico, tudo bem ? 
+First, we will develop tests, and then the classes of this ATM's system, ok?
 
-Os testes obrigatórios estão descritos abaixo (note que você é livre para adicionar mais testes), e em seguida estão as classes que o sistema deve ter:
+The mandatory tests are described below (note that you are free to add more tests), following are the classes the system must have:
 
 
-## 1. Testes
+## 1. Tests
 
-- `BancoTest`: essa classe contém todos os testes relacionados aos métodos da classe `Banco` do nosso sistema de caixa eletrônico.
-    - Métodos de Teste:
-        - `gerarNumeroNovaContaTest`: verifica se o método `gerarNumeroNovaConta` está retornando uma String de 10 dígitos, que representam o número da nova conta aberta.
-        - `adicionarPessoaClienteTest`: testa se o método `adicionarPessoaCliente` está adicionando objetos do tipo `PessoaCliente` ao array `pessoasClientes` dessa classe `Banco`. Representa a inserção de novas pessoas clientes ao banco, e retorna ao objeto da classe `PessoaCliente`.
-        - `pessoaClienteLoginTest`: verifica se o método `pessoaClienteLogin` libera o acesso de pessoas clientes e proíbe acessos com combinação de CPF e senha errados.
-        - `depositarTestTransferirFundosTestMostrarExtratoTest`: testa se o método `depositar` está adicionando ao saldo da conta bancária o valor que é passado como argumento, e `transferirFundos` está transferindo quantias em dinheiro entre as contas da pessoa cliente. Tanto o método `deposito` quanto o método `transferirFundos` não retornam valores, por isso usamos o método `mostrarExtrato` para imprimir no console e verificarmos sua impressão. Com isso, faz sentido que você utilize  os três em um método de teste único, pois para poder transferir valores de uma conta para outra, a conta que cederá o dinheiro deverá ter um saldo positivo.
-        - `depositarTestSacarTestMostrarExtratoTest`: testa se o método `depositar` está adicionando ao saldo da conta bancária o valor que é passado como argumento, e o método `sacar` está realizando a subtração correta do saldo em conta bancária da quantia que é passada como argumento. Como o método `depositar` e o método `sacar` não retornam valores, você deve usar o método `mostrarExtrato` para imprimir no console e verificar sua impressão. Com isso, faz sentido testar os três em um método de teste só, pois para poder sacar valores de uma conta, ela deverá ter um saldo positivo.
+- `BankTest`: this class contains all the tests related to the methods of our ATM system's `Bank` class.
+    - Test Methods:
+        - `generateNumberNewAccountTest`: verifies if the method `generateNumberNewAccount` is returning a String 10 digits long, that represents the number of the new account opened.
+        - `addPersonCustomerTest`: tests if the method `addPersonCustomer` is adding objects of type `PersonCustomer` the the `peopleCustomers` of the class `Banck`. Represents the insertion of new people customers to the bank, and returns an object of class `PersonCustomer`.
+        - `personCustomerLoginTest`: verifies if the method `personCustomerLogin` grants access of people customers and denies accesses with wrong CPF and password combination.
+        - `depositTestTransferFundsTestShowBalanceStatementTest`: tests if the method `deposit` is adding to the balance of the bank account the value passed as an argument argumento, and `transferFunds` is transferring amounts in cash between accounts of the same person customer.
+        Both the method `deposit` and the method `transferFunds` do not return any value, hence, use the method `showBalanceStatement` to print to the console for us to verify it. With this said, it makes sense that you utilize the three in a single test method because to transfer values from one account to another one, the account that will cede the money must have a positive balance.
+        - `depositTestWithdrawTestShowBalanceStatementTest`: test if the method `deposit` is adding to the balance of the bank account the value passed as an argument, and the method `withdraw` is subtracting from the balance of the bank account the correct amount passed as an argument. As the method `deposit` and the method `withdraw` do not return values, you must use the method `showBalanceStatement` to printto the console and verify it. With that, it makes sense to test the three in a single test method because to be able to withdraw values from one account, it must have a positive balance.
 
 - `ContaTest`: essa classe contém os testes relacionados aos métodos da classe `Conta`.
     - Métodos de Teste:
