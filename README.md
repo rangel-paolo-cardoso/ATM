@@ -30,18 +30,18 @@ The mandatory tests are described below (note that you are free to add more test
         Both the method `deposit` and the method `transferFunds` do not return any value, hence, use the method `showBalanceStatement` to print to the console for us to verify it. With this said, it makes sense that you utilize the three in a single test method because to transfer values from one account to another one, the account that will cede the money must have a positive balance.
         - `depositTestWithdrawTestShowBalanceStatementTest`: test if the method `deposit` is adding to the balance of the bank account the value passed as an argument, and the method `withdraw` is subtracting from the balance of the bank account the correct amount passed as an argument. As the method `deposit` and the method `withdraw` do not return values, you must use the method `showBalanceStatement` to printto the console and verify it. With that, it makes sense to test the three in a single test method because to be able to withdraw values from one account, it must have a positive balance.
 
-- `ContaTest`: essa classe contém os testes relacionados aos métodos da classe `Conta`.
-    - Métodos de Teste:
-        - `construtorTest`: avalia se o construtor está inicializando os atributos da classe `Conta` corretamente.
-        - `adicionarTransacaoTestRetornarSaldoTest`: verifica se o método `adicionarTransacao` está adicionando ao histórico da conta uma transação realizada pelo método em questão, e analisa se o método `retornarSaldo` retorna o saldo da conta bancária corretamente. Faz sentido testar os dois em conjunto, pois como o método `adicionarTransacao` não tem retorno, usamos o `retornarSaldo` para verificar se a transação foi adicionada à conta de forma correta e consequentemente se o saldo está sendo retornado sem erros. 
-        - `retornarResumoContaTest`: verifica se o método `retornarResumoConta` está apresentando o resumo da conta bancária.
-        - `retornarExtratoTest`: testa se o método `retornarExtrato` está apresentando o extrato da conta bancária.
-        - `getIdContaTest`: avalia se o método `Getter` do atributo `idConta` está retornando o número identificador da conta.
-        - `getPessoaClienteTest`: verifica se o  método `Getter` do atributo `pessoaCliente` está retornando a pessoa cliente da conta bancária.
+- `AccountTest`: this class contains tests related to the methods from the `Account` class.
+    - Test Methods:
+        - `constructorTest`: evaluates if the constructor is initializing the `Account` class attributes correctly.
+        - `addTransactionTestReturnBalanceTest`: verifies if the method `addTransaction` is adding a transaction to the account history performed by the given method realizada, and analyses if the method `returnBalance` retunrs the account balance correctly. It makes sense to test both together, as the method `addTransaction` does not have a return, we use `returnBalanace` to verify if the transaction was correctly added to the account and if the balance is being returned without errors. 
+        - `returnAccountSummaryTest`: verifiesif the method `returnAccountSummary` is presenting a summary of the bank account.
+        - `returnBalanceStatementTest`: tests if the method `returnBalanceStatement` is presenting the balance statementof the bank account.
+        - `getAccountIdTest`: evaluates if the method `Getter` of the attribute `accountId` is returning the identification number of the account.
+        - `getPersonCustomerTest`: verifies if the method `Getter` of the attribute `personCustomer` is returning the person customer of the bank account.
 
-- `PessoaClienteTest`: essa classe possui os testes dos métodos da classe `PessoaCliente`.
-    - Métodos de Teste:
-        - `construtorTest`: avalia se o construtor da classe está inicializando seus atributos corretamente e imprimindo no console uma mensagem indicando que um objeto da classe `PessoaCliente` foi instanciado com sucesso.
+- `PersonCustomerTest`: this class haas the test methods of `PersonCustomer` class.
+    - Test Methods:
+        - `constructorTest`: evaluates if the class's constructor is initializing its attribute correctly and printing a message to the console indicating that an object of the `PersonCustomer` class has been instantiated.
         - `adicionarContaTestRetornaNumeroDeContasTest`: verifica se o método `adicionarConta` está adicionando nova conta para pessoa cliente e também analisa se o método `retornaNumeroDeContas` retorna o número que representa a quantidade de contas que uma pessoa cliente possui. Faz sentido testar esses dois métodos juntos, pois o método `adicionarConta` não tem retorno, então usamos o método `retornarNUmeroDeContas` para verificar se a conta foi adicionada e já aproveitamos para testar o seu funcionamento. 
         - `retornarSaldoContaEspecificaTest`: testa se o método `retornarSaldoContaEspecifica` retorna o saldo de uma conta bancária específica corretamente.
         - `retornarIdContaEspecificaTest`: verifica se o método `retornarIdContaEspecifica` está retornando o número identificador de uma conta bancária específica corretamente .
