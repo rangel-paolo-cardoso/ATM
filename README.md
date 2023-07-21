@@ -42,21 +42,22 @@ The mandatory tests are described below (note that you are free to add more test
 - `PersonCustomerTest`: this class haas the test methods of `PersonCustomer` class.
     - Test Methods:
         - `constructorTest`: evaluates if the class's constructor is initializing its attribute correctly and printing a message to the console indicating that an object of the `PersonCustomer` class has been instantiated.
-        - `adicionarContaTestRetornaNumeroDeContasTest`: verifica se o método `adicionarConta` está adicionando nova conta para pessoa cliente e também analisa se o método `retornaNumeroDeContas` retorna o número que representa a quantidade de contas que uma pessoa cliente possui. Faz sentido testar esses dois métodos juntos, pois o método `adicionarConta` não tem retorno, então usamos o método `retornarNUmeroDeContas` para verificar se a conta foi adicionada e já aproveitamos para testar o seu funcionamento. 
-        - `retornarSaldoContaEspecificaTest`: testa se o método `retornarSaldoContaEspecifica` retorna o saldo de uma conta bancária específica corretamente.
-        - `retornarIdContaEspecificaTest`: verifica se o método `retornarIdContaEspecifica` está retornando o número identificador de uma conta bancária específica corretamente .
-        - `retornarExtratoContaEspecificaTest`: avalia se o método `retornarExtratoContaEspecifica` retorna o extrato bancário de uma conta específica da pessoa cliente.
-        - `adicionarTransacaoContaEspecificaTest`: testa se o método `adicionarTransacaoContaEspecifica` está adicionando uma transação a uma conta específica da pessoa cliente,
-        - `validarSenhaTest`: testa se o método `validarSenha` está verificando se a senha passada por parâmetro é a mesma que foi cadastrada ao criar a pessoa cliente.
-        - `retornarResumoContasTest`: analisa se o método `retornarResumoContas` retorna o resumo das contas da pessoa cliente.
-        - `getCpfTest`: avalia se o método `Getter` do atributo `cpf` da pessoa cliente está retornando o CPF cadastrado.
+        - `addAccountTestReturnNumberOfAccountsTest`: verifies if the method `addAccount` is adding a new account to the person customer, as well as analyzing if the method `returnNumberOfAccounts` returns the number that represents the number of accounts that a person customer owns.
+        It makes sense to test these two methods together because the method `addAccount` has no return, then we use the method `returnNumberOfAccount` to verify if a given account was added and we leverage the moment to test its operation. 
+        - `returnSpecificAccountBalanceTest`: tests if the method `returnSpecificAccountBalance` returns the correct balance of a specific bank account.
+        - `returnSpecificAccountIdBalanceTest`: verifies if the method `returnSpecificAccountIdBalance` is returning the correct identification number of a specific bank account.
+        - `returnAccountStatementTest`: evaluates if the method `returnSpecificAccountStatement` returns the bank statement of a specific person customer's account.
+        - `addSpecificAccountTransactionTest`: tests if the method `addSpecificAccountTransaction` is adding a transaction to a specific person customer's account.
+        - `validatePasswordTest`: tests if the method `validatePassword` is verifying if the password passed by parameter is the same as the one registered when the person customer was created in the system.
+        - `returnAccountsSummaryTest`: analyze if the method `returnAccountsSummary` returns a summary of the person customer's accounts.
+        - `getCpfTest`: evaluates if the method `Getter` of the attribute `cpf` of the person customer is returning the registered CPF.
 
-- `TransacaoTest`: essa classe contém todos os testes relacionados aos métodos da classe `Transacao`.
-    - Métodos de Teste:
-        - `construtorTest`: verifica se o método construtor está inicializando os atributos corretamente.
-        - `getQuantiaTest`: testa se o método `Getter` do atributo quantia está retornando a quantia corretamente.
-        - `retornarResumoTransacaoTest`: avalia se o método `retornarResumoTransacao` apresenta o resumo da transação corretamente.
-        - `retornarInstanteTest`: verifica se o método `retornarInstante` retorna o momento correto em que a transação ocorreu, com data, hora, minuto e segundo.
+- `TransactionTest`: this class contains all the tests related to the class `Transaction`.
+    - Test Methods:
+        - `constructorTest`: verifies if the constructor method is initializing the attributes correctly.
+        - `getAmountTest`: test if the method `Getter` of the amount attribute is returning the amount correctly.
+        - `returnTransactionSummaryTest`: evaluates if the method `returnTransactionSummary` presents the transaction summary correctly.
+        - `returnInstantTest`: verifies if the method `returnInstant` returns the correct moment when the transaction occurred, with date, time, minute, and second.
 
 Ufa! Quantos testes não!?  😅 
 
