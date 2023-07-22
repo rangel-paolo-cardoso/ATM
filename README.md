@@ -59,15 +59,15 @@ The mandatory tests are described below (note that you are free to add more test
         - `returnTransactionSummaryTest`: evaluates if the method `returnTransactionSummary` presents the transaction summary correctly.
         - `returnInstantTest`: verifies if the method `returnInstant` returns the correct moment when the transaction occurred, with date, time, minute, and second.
 
-Ufa! Quantos testes não!?  😅 
+Ufs! So many tests, huh? 😅 
 
-Agora vamos para as classes que o sistema de caixa eletrônico deve ter!
+Now let's go to the classes that the ATM system must have!
 
-![MapaGeral](img/mapa_conceitual_geral.png)
+![MapaGeral](img/general_conceptual_map.png)
 
 ## 2. Classes
 
-- `Banco`: representa a entidade banco do nosso caixa eletrônico. Essa classe é a responsável por criar novas pessoas clientes no banco e também verificar e validar o login da pessoa cliente no caixa eletrônico.
+- `Bank`: representa a entidade banco do nosso caixa eletrônico. Essa classe é a responsável por criar novas pessoas clientes no banco e também verificar e validar o login da pessoa cliente no caixa eletrônico.
     - Atributos:
         - `pessoasClientes`: esse atributo é um array de objetos da classe `PessoaCliente` (ex: ArrayList<PessoaCliente>), e representa a lista de pessoas clientes que tem contas abertas no banco (uma pessoa cliente pode ter mais de uma conta aberta).
         - `contas`: esse atributo é um array de objetos da classe `Contas` (ex: ArrayList<Conta>) e representa a lista de contas abertas no banco, onde cada uma pertence a uma pessoa cliente. As contas são identificadas por uma String de 10 dígitos, que representa um número identificador único gerado pelo método `gerarNumeroNovaConta` da classe `Banco`.
