@@ -100,20 +100,20 @@ Now let's go to the classes that the ATM system must have!
         - `getAccountId`: `Getter` method of the attribute `accountId`.
         - `getPersonCustomer`: `Getter` method of the attribute `personCustomer`.
         
-⚠**Atenção⚠:** perceba que a soma das transações indica o saldo da conta, onde saques e transferências enviadas são valores negativos e os depósitos e transferências recebidos são valores positivos nessa soma.
+⚠**Attention:** note that the sum of transactions indicates the account balance, where withdrawals and transfers sent are negative values and deposits and transfers received are positive values in this sum.
 
-- `PessoaCliente`: essa classe representa as pessoas clientes do banco.
-    - Atributos:
-        - `nomeCompleto`: atributo do tipo String para armazenar o nome da pessoa cliente.
-        - `cpf`: atributo do tipo String para armazenar o CPF da pessoa cliente.
-        - `senha`: atributo do tipo String para armazenar a senha da pessoa cliente.
-        - `contas`: esse atributo é um array de objetos da classe `Conta` (ex: ArrayList<Conta>), responsável por armazenar todas as contas que a pessoa cliente possui.
+- `PersonCustomer`: this class represents bank customer people.
+    - Attributes:
+        - `fullName`: Attribute of type String to store the person customer's name.
+        - `cpf`: Attribute of type String to store the person customer's CPF.
+        - `password`: Attribute of type String to store the person customer's password.
+        - `accounts`: This attribute is an array of objects of the class `Account` (ex: ArrayList<Account>), responsible for storing all the accounts the person customer owns.
 
-    - Métodos:
-        - Construtor: inicializa os atributos da classe `PessoaCliente` e recebe três atributos do tipo String, que são `nome`, `cpf`` e `senha`. Esses argumentos são utilizados para inicializar os respectivos atributos. Por fim, esse método construtor imprime uma mensagem no console indicando que a pessoa cliente foi criada (ex: "Nova pessoa cliente Alexiania Silva com CPF: 433.892.200-11 criada!")
-        - `adicionarConta`: esse método é público e deve ter o retorno do tipo `void`. Ele recebe um argumento `conta`, do tipo da classe `Conta`, e adiciona ele no array `contas`.
-        - `retornaNumeroDeContas`: método público que retorna um inteiro (não recebe nenhum argumento). O inteiro que é retornado por esse método é a quantidade de objetos no array `contas`, ou seja, o seu tamanho.
-        - `retornarSaldoContaEspecifica`: esse método é público e retorna um valor do tipo `double`, recebendo como argumento um `indice` do tipo inteiro (para ser usado como índice no array `contas`) e usando o método `retornarSaldo` da classe `Conta` para retornar o saldo.
+    - Method:
+        - Constructor: initializes the attributes of the class `PersonCustomer` and receives three attributes of type String, which are `name`, `cpf`, and `password`. These arguments are used to initialize the respective attribute. Finally, this constructor method prints a message to the console indicating that the person customer was created (e.g. "New person customer Alexiania Silva with CPF: 433.892.200-11 created!")
+        - `addAccount`: this method is public and must return type `void`. It receives an argument `account`, of the type of the class `Account`, and adds it to the array `accounts`.
+        - `returnNumberOfAccounts`: public method that returns an integer (it does not receive any argument). The integer number returned by this method is the number of objects in the array `accounts`, that is, its size.
+        - `returnSpecificAccountBalance`: this method is public and returns a value of type `double`, receiving as an argument an `index` of type integer (to be used as an index of the array `accounts`) and using the method `returnBalance` of the class `Account` to return the balance.
         - `retornarIdContaEspecifica`: esse método é público e retorna um valor do tipo String, recebendo um argumento `indice` do tipo inteiro (para ser usado como índice no array `contas`) e usando o método `getIdConta` da classe `Conta` para retornar o número identificador único da conta.
         - `retornarExtratoContaEspecifica`: esse método é público e tem um retorno do tipo `void`, recebendo um argumento `indice` do tipo inteiro (para ser usado como índice no array `contas`) e usando o método `retornarExtrato` da classe `Conta` para imprimir todas as transações de uma determinada conta.
         - `adicionarTransacaoContaEspecifica`: esse método público e tem retorno do tipo `void`, recebendo 3 argumentos, que são `indice` do tipo inteiro, `quantia` do tipo `double` e `descricao` do tipo String. Esse método utiliza o argumento `indice` para selecionar uma conta específica dentro do array `contas` e chama o método `adicionarTransacao` da classe `Conta` para adicionar uma transação e passar os argumentos `quantia` e `descricao`.
