@@ -121,18 +121,18 @@ Now let's go to the classes that the ATM system must have!
         - `returnAccountsSummary`: this method is public and returns of type `void`. It does not receive arguments and loops through the array `accounts`, using the method `returnAccountSummary` of the class `Account` to print the account summary.
         - `getCpf`: `Getter` method of the attribute `cpf`.
 
-- `Transacao`: essa classe é utilizada para representar a transação nas contas do banco.
-    - Atributos:
-        - `quantia`: esse atributo é do tipo `double` e representa o valor da transação.
-        - `instante`: esse atributo é do tipo String e armazena a data e a hora que a transação ocorreu.
-        - `descricao`: esse atributo é do tipo String e armazena a descrição da transação.
-        - `conta`: esse atributo é do tipo `Conta` e armazena o objeto `conta` da transação.
+- `Transaction`: this class is used to represent a transaction on bank accounts.
+    - Attributes:
+        - `amount`: this attribute is of type `double`, representing the transaction value.
+        - `instant`: this attribute is of type String and stores the transaction date and time.
+        - `description`: this attribute is of type String and stores the transaction description.
+        - `account`: this attribute is of type `Account` and stores the `account` object of the transation.
     
-    - Métodos:
-        - Construtor: esse método recebe dois argumentos, que são `quantia` do tipo `double` e `descricao` do tipo String. Ele usa esses argumentos para inicializar seus respectivos atributos e chama o método `retornarInstante` para armazenar a data e a hora que essa transação foi realizada.
-        - `getQuantia`: método `Getter` do atributo `quantia`.
-        - `retornarResumoTransacao`: esse método é público e retorna uma String que representa o resumo da transação, contendo as informações instante, quantia e descrição. Ele não recebe nenhum argumento.
-        - `retornarInstante`: esse método é público e retorna um String que representa o instante em que esse método é invocado. Ele usa a classe `LocalDateTime` para recuperar o momento em que o método é invocado (`LocalDateTime.now()`) e a classe `DateTimeFormatter` para formatar para o padrão brasileiro (ex: 20/01/2022 10:24:30). Esse método é usado no método construtor para inicializar o atributo `instante`.
+    - Methods:
+        - Constructor: this method receives two arguments, which are `amount` of type `double` and `description` of type String. It uses these arguments to initialize its respective attributes and calls the method `returnInstant` to store the transaction's date and time.
+        - `getAmount`: `Getter` method of the attribute `amount`.
+        - `returnTransactionSummary`: this method is public and returns a String representing the transaction summary, containing the instant, amount, and description. It does not receive any arguments.
+        - `returnInstant`: this method is public and returns a String representing the instant this method is invoked. Ele usa a classe `LocalDateTime` para recuperar o momento em que o método é invocado (`LocalDateTime.now()`) e a classe `DateTimeFormatter` para formatar para o padrão brasileiro (ex: 20/01/2022 10:24:30). Esse método é usado no método construtor para inicializar o atributo `instante`.
 
 ![MapaMental](img/mapa_mental_classes.png)
 
