@@ -132,103 +132,103 @@ Now let's go to the classes that the ATM system must have!
         - Constructor: this method receives two arguments, which are `amount` of type `double` and `description` of type String. It uses these arguments to initialize its respective attributes and calls the method `returnInstant` to store the transaction's date and time.
         - `getAmount`: `Getter` method of the attribute `amount`.
         - `returnTransactionSummary`: this method is public and returns a String representing the transaction summary, containing the instant, amount, and description. It does not receive any arguments.
-        - `returnInstant`: this method is public and returns a String representing the instant this method is invoked. Ele usa a classe `LocalDateTime` para recuperar o momento em que o método é invocado (`LocalDateTime.now()`) e a classe `DateTimeFormatter` para formatar para o padrão brasileiro (ex: 20/01/2022 10:24:30). Esse método é usado no método construtor para inicializar o atributo `instante`.
+        - `returnInstant`: this method is public and returns a String representing the instant this method is invoked. It uses the `LocalDateTime` class to recover the moment in which the method is invoked (`LocalDateTime.now()`) and the `DateTimeFormatter` class to format to the Brazilian pattern (ex: 20/01/2022 10:24:30). This method is used in the constructor method to initialize the attribute `instant`.
 
-![MapaMental](img/mapa_mental_classes.png)
+![MindMap](img/mind_map_classes.png)
 
-Para ajudar, implemente agora a classe `CaixaEletronico`, que contém o método `main`. Dessa forma, você terá um ponto de partida. Agora siga o passo a passo abaixo: 👇
+To help, now implement the `ATM` class, which contains the `main` method. That way you will have a starting point. Now follow the step-by-step below: 👇
 
-1. Primeiro importe a classe `Scanner`, e então escreva o método `main`. Aqui você deve instanciar um objeto da classe `Banco` e usá-la para criar três pessoas clientes e duas contas para cada pessoa cliente.
+1. First import the `Scanner` class, and then write the `main` method. Here you must instantiate an object of the `Bank` class and use it to create three customer people and two accounts for each customer person.
 
-⚠**Atenção⚠:** Após a criação das pessoas clientes e suas respectivas contas bancárias, você vai entrar em um laço infinito que é o sistema do caixa eletrônico em si. A princípio ele mostra uma mensagem de boas-vindas e permite que a pessoa cliente possa entrar com seus dados para poder acessar sua conta. Se a pessoa cliente entrar com os dados incorretos, o fluxo do programa vai entrar na primeira condição (`if`) e reapresentará a mensagem de boas-vindas e os campos para que a pessoa cliente possa tentar novamente. Quando a pessoa cliente entra com os dados corretos,  o fluxo do sistema entra na segunda condição (`else`) e é apresentado um menu para manipulação das suas contas bancárias.
+⚠**Attention:** After creating the customers and their respective bank accounts, you will enter an infinite loop that is the ATM system itself. At first, it shows a welcome message and allows the customer to enter their data in order to access their account. If the customer enters incorrect data, the program flow will enter the first condition (`if`) and will re-present the welcome message and fields so that the customer can try again. When the customer enters the correct data, the system flow enters the second condition (`else`) and a menu for handling their bank accounts is presented.
 
 
-2. Na segunda etapa você verá um resumo das contas bancárias da pessoa usuária e também um menu com cinco opções (quatro delas para manipular a sua conta bancária e a quinta para fazer o logout do sistema e voltar para a tela de boas-vindas com os campos para fazer o login). 
+2. In the second step, you will see a summary of the user's bank accounts and also a menu with five options (four of them to manipulate your bank account and the fifth to log out of the system and return to the welcome screen with the fields to login). 
 
-👀Observe que cada opção é uma condição `if`/`else`! Dentro delas fazemos os tratamentos de dados inseridos de forma errada, com mensagens que indiquem o que foi que a pessoa cliente errou. Já quando os dados são inseridos corretamente, chamamos os respectivos métodos do banco para realizar a operação relativa à opção selecionada.
+👀Note that each option is an `if`/`else` condition! Within them, we process data entered incorrectly, with messages that indicate what the customer has done wrong. When the data is inserted correctly, we call the respective database methods to carry out the operation related to the selected option.
 
 ```java
-package com.trybe.caixaeletronico;
+package com.trybe.atm;
 
 import java.util.Scanner;
 
-public class CaixaEletronico {
+public class ATM {
 
   public static void main(String[] args) {
 
 	  Scanner sc = new Scanner(System.in);
 	
-    Banco banco = new Banco();
+    Bank bank = new Bank();
     
-    /* adiciona algumas pessoas clientes ao banco criando ja uma conta poupanca 
-     * e em seguida adiciona uma conta corrente para essas pessoas
-     */
+    /* add some people customers to the bank already creating a savings account
+      * and then add a checking account for these people
+      */
     
-    // pessoa cliente 1
-    PessoaCliente pessoaCliente1 = banco.adicionarPessoaCliente("Alexiania Pereira", "842.074.410-77", "1234"); 
-    banco.adicionarConta("Poupança", pessoaCliente1);
-    banco.adicionarConta("Corrente", pessoaCliente1);
+    // person customer 1
+    PersonCustomer personCustomer1 = bank.addPersonCustomer("Alexiania Pereira", "842.074.410-77", "1234"); 
+    bank.addAccount("Savings", personCustomer1);
+    bank.addAccount("Checking", personCustomer1);
     
-    // pessoa cliente 2
-    PessoaCliente pessoaCliente2 = banco.adicionarPessoaCliente("Abadiania Silva", "848.725.510-87", "1234");
-    banco.adicionarConta("Poupança", pessoaCliente2);
-    banco.adicionarConta("Corrente", pessoaCliente2);
+    // person customer 2
+    PersonCustomer personCustomer2 = bank.addPersonCustomer("Abadiania Silva", "848.725.510-87", "1234");
+    bank.addAccount("Savings", personCustomer2);
+    bank.addAccount("Checking", personCustomer2);
 
-    // pessoa cliente 3
-    PessoaCliente pessoaCliente3 = banco.adicionarPessoaCliente("Camaragibe Oliveira", "433.892.200-11", "1234");
-    banco.adicionarConta("Poupança", pessoaCliente3);
-    banco.adicionarConta("Corrente", pessoaCliente3);
-    // laco infinito
+    // person customer 2
+    PersonCustomer personCustomer3 = bank.addPersonCustomer("Camaragibe Oliveira", "433.892.200-11", "1234");
+    bank.addAccount("Savings", personCustomer3);
+    bank.addAccount("Checking", personCustomer3);
+    // infinite loop
     while (true) {
       
-      System.out.println("\n\nBem-vindo ao Banco da Trybe\n\n");
-      System.out.print("Entre com seu CPF: ");
-      String pessoaClienteCpf = sc.nextLine();
-      System.out.print("Entre com sua senha: ");
-      String senha = sc.nextLine();
+      System.out.println("\n\nWelcome to the Trybe's Bank\n\n");
+      System.out.print("Enter your CPF: ");
+      String personCustomerCPF = sc.nextLine();
+      System.out.print("Enter your password: ");
+      String password = sc.nextLine();
 
-      PessoaCliente pessoaClienteAutenticada = banco.pessoaClienteLogin(pessoaClienteCpf, senha);
+      PersonCustomer authenticatedPersonCustomer = bank.personCustomerLogin(personCustomerCPF, password);
       
-      if (pessoaClienteAutenticada == null) {
-        System.out.println("Combinação de CPF e senha incorretos. Tente novamente");
+      if (authenticatedPersonCustomer == null) {
+        System.out.println("Incorrect combination of CPF and password. Try again");
 
       } else {
 
         int op;
 
-        // menu para manipulacao das contas da pessoa cliente
+        // menu for handling customer accounts
         do {
           
-          // mostra o resumo das contas da pessoa cliente
-      	  pessoaClienteAutenticada.retornarResumoContas();
+          // show the account summary of the customer person
+      	  authenticatedPersonCustomer.returnAccountsSummary();
 
-          System.out.println("O que você gostaria de fazer?");
-          System.out.println("  1) Mostrar Extrato");
-          System.out.println("  2) Sacar");
-          System.out.println("  3) Depositar");
-          System.out.println("  4) Transferir");
-          System.out.println("  5) Sair");
+          System.out.println("What would you like to do?");
+          System.out.println("  1) Show Balance Statement");
+          System.out.println("  2) Withdraw");
+          System.out.println("  3) Deposit");
+          System.out.println("  4) Transfer");
+          System.out.println("  5) Exit");
           System.out.println();
-          System.out.print("Entre com sua opção: ");
+          System.out.print("Enter your option: ");
 
           op = sc.nextInt();
 
           if (op < 1 || op > 5) {
-            System.out.println("Opção inválida, escolha uma opção válida.");
+            System.out.println("Invalid option, choose a valid option.");
           }
           
-          // processando a escolha
+          // processing the choice
           if (op == 1) {
             
-            int conta;
+            int account;
 
-            // pega o indice da conta para imprimir o extrato
+            // get the account index to print the statement
             do {
-              System.out.printf("Entre com o número (1-%d) para a conta\nque "
-                                       + "o extrato será impresso: ", pessoaClienteAutenticada.retornaNumeroDeContas());
-              conta = sc.nextInt() - 1;
-              if (conta < 0 || conta >= pessoaClienteAutenticada.retornaNumeroDeContas()) {
-                System.out.println("Número inválido, tente novamente.");
+              System.out.printf("Enter the number (1-%d) to the account\nso that "
+                                       + "the balance statement will be printed: ", authenticatedPersonCustomer.returnNumberOfAccounts());
+              account = sc.nextInt() - 1;
+              if (account < 0 || account >= authenticatedPersonCustomer.returnNumberOfAccounts()) {
+                System.out.println("Invalid number, try again.");
               }else {
             	break;
               }
