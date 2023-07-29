@@ -234,150 +234,150 @@ public class ATM {
               }
             } while (true);
         	
-        	 banco.mostrarExtrato(pessoaClienteAutenticada, conta);
+        	 bank.showBalanceStatement(authenticatedPersonCustomer, account);
             
             
             
             
           } else if (op == 2) {
         	
-        	int deConta;
-            double quantia;
-            double saldoConta;
+        	int fromAccount;
+            double amount;
+            double accountBalance;
 
-            // pega o indice da conta para saque
+            // get the account index for withdrawal
             do {
-              System.out.printf("Entre o número (1-%d) para selecionar a conta para "
-                                   + "o saque: ", pessoaClienteAutenticada.retornaNumeroDeContas());
-              deConta = sc.nextInt() - 1;
-              if (deConta < 0 || deConta >= pessoaClienteAutenticada.retornaNumeroDeContas()) {
-                System.out.println("Índice de conta inválido, tente novamente.");
+              System.out.printf("Enter the number (1-%d) to select the account for "
+                                   + "withdrawal: ", authenticatedPersonCustomer.returnNumberOfAccounts());
+              fromAccount = sc.nextInt() - 1;
+              if (fromAccount < 0 || fromAccount >= authenticatedPersonCustomer.returnNumberOfAccounts()) {
+                System.out.println("Account index is invalid, try again.");
               } else {
             	break;
               }
             } while (true);
             
-            // retorna o saldo da conta selecionada para ver se tem fundos suficientes
-            saldoConta = pessoaClienteAutenticada.retornarSaldoContaEspecifica(deConta);
+            // returns the balance of the selected account to see if it has enough funds
+            accountBalance = authenticatedPersonCustomer.returnSpecificAccountBalance(fromAccount);
 
-            // pega a quantia para o saque
+            // Get the amount for the withdrawal
             do {
-              System.out.printf("Entre com a quantia a ser sacada (máximo R$%.02f): R$ ", saldoConta);
-              quantia = sc.nextDouble();
-              if (quantia < 0) {
-                System.out.println("quantia deve ser maior que zero.");
-              } else if (quantia > saldoConta) {
-                System.out.printf("quantia não pode ser maior que o saldo "
-                                        + "de R$ %.02f.\n", saldoConta);
+              System.out.printf("Enter the amount to be withdrawn (maximum R$%.02f): R$ ", accountBalance);
+              amount = sc.nextDouble();
+              if (amount < 0) {
+                System.out.println("amount must be greater than zero.");
+              } else if (amount > accountBalance) {
+                System.out.printf("amount must not be greater than the balance "
+                                        + "of R$ %.02f.\n", accountBalance);
               } else {
             	break;
               }
             } while (true);
 
-        	banco.sacar(pessoaClienteAutenticada, deConta, quantia);
+        	bank.withdraw(authenticatedPersonCustomer, fromAccount, amount);
             
           } else if (op == 3) {
         	
-        	int paraConta;
-            double quantia;
+        	int toAccount;
+            double amount;
 
-            // pega o indice da conta para deposito
+            // gets the index of the account for deposit
             do {
-              System.out.printf("Entre com o número (1-%d) para selecionar a conta para "
-                                     + "depósito: ", pessoaClienteAutenticada.retornaNumeroDeContas());
-              paraConta = sc.nextInt() - 1;
+              System.out.printf("Enter the number (1-%d) to select the account for "
+                                     + "deposit: ", authenticatedPersonCustomer.returnNumberOfAccounts());
+              toAccount = sc.nextInt() - 1;
               
-              if (paraConta < 0 || paraConta >= pessoaClienteAutenticada.retornaNumeroDeContas()) {
-                System.out.println("Índice de conta inválido, tente novamente.");
+              if (toAccount < 0 || toAccount >= authenticatedPersonCustomer.returnNumberOfAccounts()) {
+                System.out.println("Account index is invalid, try again.");
               
               } else {
             	break;
               }
             } while (true);
 
-            // pega quantia para depositar
+            // gets amount to deposit
             do {
-              System.out.printf("Entre com a quantia de depósito: R$ ");
-              quantia = sc.nextDouble();
+              System.out.printf("Enter the amount to deposit: R$ ");
+              amount = sc.nextDouble();
               
-              if (quantia < 0) {
-                System.out.println("quantia deve ser maior que zero.");
+              if (amount < 0) {
+                System.out.println("amount must be greater than zero.");
               
               } else {
             	break;
               }
             } while (true);
 
-        	// realiza o deposito
-            banco.depositar(pessoaClienteAutenticada, paraConta, quantia);
+        	// performs the deposit
+            bank.deposit(authenticatedPersonCustomer, toAccount, amount);
             
           } else if (op == 4) {
         	
-        	int daConta;
-        	int paraConta;
-        	double quantia;
-        	double saldoConta;
+        	int fromAccount;
+        	int toAccount;
+        	double amount;
+        	double accountBalance;
         	
-            // pega o indice de uma conta retirar o valor da transferencia
+            // gets the index of an account withdraw the transfer amount
             do {
-              System.out.printf("Entre o número (1-%d) para "
-            	                      + "retirar o valor para transferência: ", pessoaClienteAutenticada.retornaNumeroDeContas());
-              daConta = sc.nextInt() - 1;
-              if (daConta < 0 || daConta >= pessoaClienteAutenticada.retornaNumeroDeContas()) {
-                System.out.println("Índice de conta inválido, tente novamente.");
+              System.out.printf("Enter the number (1-%d) to "
+            	                      + "withdraw the value for transfer: ", authenticatedPersonCustomer.returnNumberOfAccounts());
+              fromAccount = sc.nextInt() - 1;
+              if (fromAccount < 0 || fromAccount >= authenticatedPersonCustomer.returnNumberOfAccounts()) {
+                System.out.println("Account index is invalid, try again.");
               } else {
             	break;
               }
             } while (true);
 
-            // retorna o saldo da conta selecionada para ver se tem fundos suficientes
-            saldoConta = pessoaClienteAutenticada.retornarSaldoContaEspecifica(daConta);
+            // returns the balance of the selected account to see if it has enough funds
+            accountBalance = authenticatedPersonCustomer.returnSpecificAccountBalance(fromAccount);
 
-            // pega o indice da conta que vai receber o valor da transferencia
+            // gets the index of the account that will receive the transfer amount
             do {
-              System.out.printf("Entre o número (1-%d) para "
-                                     + "selecionar a conta que receberá a transferência: ", pessoaClienteAutenticada.retornaNumeroDeContas());
-              paraConta = sc.nextInt() - 1;
-              if (paraConta < 0 || paraConta >= pessoaClienteAutenticada.retornaNumeroDeContas()) {
-                System.out.println("Índice de conta inválido, tente novamente.");
+              System.out.printf("Enter the number (1-%d) to "
+                                     + "select the account, which will receive the transfer: ", authenticatedPersonCustomer.returnNumberOfAccounts());
+              toAccount = sc.nextInt() - 1;
+              if (toAccount < 0 || toAccount >= authenticatedPersonCustomer.returnNumberOfAccounts()) {
+                System.out.println("Account index is invalid, try again.");
               } else {
             	break;
               }
             } while (true);
 
-            // pega o valor para transferir
+            // gets the value to transfer
             do {
-              /* pega a quantia para ser transferida de uma conta da pessoa cliente para outra
-               * levando em consideracao o saldo da conta que cedera o dinheiro
-               */
-              System.out.printf("Entre com a quantia para ser transferida (máximo R$%.02f): R$ ", saldoConta);
-              quantia = sc.nextDouble();
+              /* gets the amount to be transferred from one customer person account to another
+                * taking into account the balance of the account that will transfer the money
+                */
+              System.out.printf("Enter the amount to be transferred (maximum R$%.02f): R$ ", accountBalance);
+              amount = sc.nextDouble();
               
-              if (quantia < 0) {
-                System.out.println("quantia deve ser maior que zero.");
+              if (amount < 0) {
+                System.out.println("amount must be greater than zero.");
               
-              } else if (quantia > saldoConta) {
-                System.out.printf("quantia não pode ser maior que o valor do saldo "
-                                       + "de R$.02f.\n", saldoConta);
+              } else if (amount > accountBalance) {
+                System.out.printf("amount must not be greater than the balance "
+                                       + "of R$.02f.\n", accountBalance);
               } else {
             	break;
               }
             } while (true);
             
-            // envia as informacoes para o banco realizar a trasnferencia
-            banco.transferirFundos(pessoaClienteAutenticada, daConta, paraConta, quantia);
+            // sends the information to the bank to perform the transfer
+            bank.transferFunds(authenticatedPersonCustomer, fromAccount, toAccount, amount);
             
           } else if (op == 5) {
-        	System.out.println("Logout realizado com sucesso!");
+        	System.out.println("Logout performed successfully!");
             break;
           }
 
         } while (true);    	
     	
-      }// fim else
+      }// end else
       
       
-    }// fim loop infinito
+    }// end inifite loop
   } 
 }
 ```
