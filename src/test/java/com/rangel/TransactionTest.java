@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
-@DisplayName("All the method from the Transaction class")
+@DisplayName("Transaction Test")
 public class TransactionTest {
     
     @Test
