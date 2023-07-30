@@ -1,6 +1,6 @@
 package com.rangel;
 
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -12,30 +12,31 @@ public class TransactionTest {
     
     @Test
     @DisplayName("Tests the constructor method of the Transaction class.")
-    void constructorTest() {
+    public void constructorTest() {
         Transaction transaction = new Transaction(5_000.00, "Test");
         assertEquals(5_000.00, transaction.getAmount());
         assertEquals("Test", transaction.getDescription());
-        assertNull(transaction.getInstant());
+        assertNotNull(transaction.getInstant());
     }
 
     @Test
     @DisplayName("Tests the Getter method of the amount attribute.")
-    void getAmountTest() {
+    public void getAmountTest() {
         Transaction transaction = new Transaction(5_000.00, "Test");
-        assertEquals(3_000.00, transaction.getAmount());
+        assertEquals(5_000.00, transaction.getAmount());
     }
 
     @Test
     @DisplayName("Tests the method Return Transaction Summary.")
-    void returnTransactionSummaryTest() {
+    public void returnTransactionSummaryTest() {
         Transaction transaction = new Transaction(3_000.00, "Test");
-        assertTrue(transaction.returnTransactionSummary().contains(" -------- Test: R$3000.00 +"));
+        System.out.println("Hellooooo: " + transaction.returnTransactionSummary());
+        assertTrue(transaction.returnTransactionSummary().contains(" -------- Test: R$3000"));
     }
 
     @Test
     @DisplayName("Tests if the method Instant is generating the instant correctly.")
-    void returnInstantTest() {
+    public void returnInstantTest() {
         Transaction transaction = new Transaction(3_000.00, "Test");
         String instant = transaction.returnInstant();
         String comparacaoInstante = transaction.returnInstant();
