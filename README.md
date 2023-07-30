@@ -381,128 +381,128 @@ public class ATM {
   } 
 }
 ```
-⚠**Atenção⚠:** essa classe `CaixaEletronico` é a principal do nosso sistema, pois ela contém o método `main` e como podemos ver na implementação, ele é o responsável por toda a interação com a pessoa cliente. Em outras palavras, essa classe é a interface entre a pessoa cliente e nosso sistema do banco. Com ela e as informações descritas anteriormente sobre as classes e seus métodos, você conseguirá entregar essa demanda com sucesso! 🚀 
+⚠**Attention:** this `ATM` class is the main one in our system, as it contains the `main` method and as we can see in the implementation, it is responsible for all interaction with the customer. In other words, this class is the interface between the customer person and our bank system. With it and the information previously described the classes and their methods, you can successfully deliver this demand! 🚀 
 
 #VQV
 
-## Exemplo
+## Exemple
 
-Considerando que tenha executado exatamente o código da classe `main` acima e interagido como se fôssemos a pessoa cliente Camaragibe Oliveira, teríamos a seguinte interação com o console:
+Assuming that we have executed exactly the code of the `main` class above and interacted as if we were the client Camaragibe Oliveira, we would have the following interaction with the console:
 ```
-Nova pessoa cliente Alexiania Pereira com CPF: 842.074.410-77 criada!
+New person customer Alexiania Pereira with CPF: 842.074.410-77 created!
 
-Nova pessoa cliente Abadiania Silva com CPF: 848.725.510-87 criada!
+New person customer Abadiania Silva with CPF: 848.725.510-87 created!
 
-Nova pessoa cliente Camaragibe Oliveira com CPF: 433.892.200-11 criada!
-
-
-
-Bem-vindo ao Banco da Trybe
-
-
-Entre com seu CPF: 433.892.200-11
-Entre com sua senha: 1234
-
-
-Resumo das Contas da pessoa Camaragibe Oliveira:
-
-1) 1376245820 : R$0.00 : Poupança
-
-2) 1400842111 : R$0.00 : Corrente
-
-
-O que você gostaria de fazer?
-  1) Mostrar Extrato
-  2) Sacar
-  3) Depositar
-  4) Transferir
-  5) Sair
-
-Entre com sua opção: 3
-Entre com o número (1-2) para selecionar a conta para depósito: 1
-Entre com a quantia de depósito: R$ 2000
-
-
-Resumo das Contas da pessoa Camaragibe Oliveira:
-
-1) 1376245820 : R$2000.00 : Poupança
-
-2) 1400842111 : R$0.00 : Corrente
-
-
-O que você gostaria de fazer?
-  1) Mostrar Extrato
-  2) Sacar
-  3) Depositar
-  4) Transferir
-  5) Sair
-
-Entre com sua opção: 3
-Entre com o número (1-2) para selecionar a conta para depósito: 2
-Entre com a quantia de depósito: R$ 4000
-
-
-Resumo das Contas da pessoa Camaragibe Oliveira:
-
-1) 1376245820 : R$2000.00 : Poupança
-
-2) 1400842111 : R$4000.00 : Corrente
-
-
-O que você gostaria de fazer?
-  1) Mostrar Extrato
-  2) Sacar
-  3) Depositar
-  4) Transferir
-  5) Sair
-
-Entre com sua opção: 4
-Entre o número (1-2) para retirar o valor para transferência: 2
-Entre o número (1-2) para selecionar a conta que receberá a transferência: 1
-Entre com a quantia para ser transferida (máximo R$4000.00): R$ 2000
-
-
-Resumo das Contas da pessoa Camaragibe Oliveira:
-
-1) 1376245820 : R$4000.00 : Poupança
-
-2) 1400842111 : R$2000.00 : Corrente
-
-
-O que você gostaria de fazer?
-  1) Mostrar Extrato
-  2) Sacar
-  3) Depositar
-  4) Transferir
-  5) Sair
-
-Entre com sua opção: 1
-Entre com o número (1-2) para a conta
-que o extrato será impresso: 1
-
-Extrato da conta 1376245820
-
-21/01/2022 14:21:52 -------- Transferência recebida: R$ 2000.00 +
-21/01/2022 14:21:32 -------- Depósito recebido: R$ 2000.00 +
+New person customer Camaragibe Oliveira with CPF: 433.892.200-11 created!
 
 
 
-Resumo das Contas da pessoa Camaragibe Oliveira:
-
-1) 1376245820 : R$4000.00 : Poupança
-
-2) 1400842111 : R$2000.00 : Corrente
+Welcome to Trybe Bank
 
 
-O que você gostaria de fazer?
-  1) Mostrar Extrato
-  2) Sacar
-  3) Depositar
-  4) Transferir
-  5) Sair
+Enter your CPF: 433.892.200-11
+Enter your password: 1234
 
-Entre com sua opção: 
+
+Summary of Accounts for the person Camaragibe Oliveira:
+
+1) 1376245820 : R$0.00 : Savings
+
+2) 1400842111 : R$0.00 : Checking
+
+
+What would you like to do?
+  1) Show Balance Statement
+  2) Withdraw
+  3) Deposit
+  4) Transfer
+  5) Exit
+
+Enter your option: 3
+Enter the number (1-2) to select the account for deposit: 1
+Enter the deposit amount: R$ 2000
+
+
+Summary of Accounts for the person Camaragibe Oliveira:
+
+1) 1376245820 : R$2000.00 : Saving
+
+2) 1400842111 : R$0.00 : Checking
+
+
+What would like to do?
+  1) Show Balance Statement
+  2) Withdraw
+  3) Deposit
+  4) Transfer
+  5) Exit
+
+Enter your option: 3
+Enter the number (1-2) to select the account for deposit: 2
+Enter the deposit amount: R$ 4000
+
+
+Summary of Accounts for the person Camaragibe Oliveira:
+
+1) 1376245820 : R$2000.00 : Savings
+
+2) 1400842111 : R$4000.00 : Checking
+
+
+What would like to do?
+  1) Show Balance Statement
+  2) Withdraw
+  3) Deposit
+  4) Transfer
+  5) Exit
+
+Enter your option: 4
+Enter the number (1-2) to withdraw the amount for transfer: 2
+Enter the number (1-2) to select the account that will receive the transfer: 1
+Enter the amount to be transferred (maximum R$4000.00): R$ 2000
+
+
+Summary of Accounts for the person Camaragibe Oliveira:
+
+1) 1376245820 : R$4000.00 : Savings
+
+2) 1400842111 : R$2000.00 : Checking
+
+
+What would like to do?
+  1) Show Balance Statement
+  2) Withdraw
+  3) Deposit
+  4) Transfer
+  5) Exit
+
+Enter your option: 1
+Enter the number (1-2) for the account
+the balance statement will be printed: 1
+
+Balace statement of account 1376245820
+
+21/01/2022 14:21:52 -------- Transfer received: R$ 2000.00 +
+21/01/2022 14:21:32 -------- Deposit received: R$ 2000.00 +
+
+
+
+Summary of Accounts for the person Camaragibe Oliveira:
+
+1) 1376245820 : R$4000.00 : Savings
+
+2) 1400842111 : R$2000.00 : Checking
+
+
+What would like to do?
+  1) Show Balance Statement
+  2) Withdraw
+  3) Deposit
+  4) Transfer
+  5) Exit
+
+Enter your option:
 ```
 
-Muito legal né? Bom trabalho! 🚀 #VQV
+Pretty cool huh? Good job! 🚀 #LETSGO
 ---
