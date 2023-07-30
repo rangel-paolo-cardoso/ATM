@@ -45,7 +45,7 @@ The mandatory tests are described below (note that you are free to add more test
         - `addAccountTestReturnNumberOfAccountsTest`: verifies if the method `addAccount` is adding a new account to the person customer, as well as analyzing if the method `returnNumberOfAccounts` returns the number that represents the number of accounts that a person customer owns.
         It makes sense to test these two methods together because the method `addAccount` has no return, then we use the method `returnNumberOfAccount` to verify if a given account was added and we leverage the moment to test its operation. 
         - `returnSpecificAccountBalanceTest`: tests if the method `returnSpecificAccountBalance` returns the correct balance of a specific bank account.
-        - `returnSpecificAccountIdBalanceTest`: verifies if the method `returnSpecificAccountIdBalance` is returning the correct identification number of a specific bank account.
+        - `returnSpecificAccountIdTest`: verifies if the method `returnSpecificAccountIdBalance` is returning the correct identification number of a specific bank account.
         - `returnAccountStatementTest`: evaluates if the method `returnSpecificAccountStatement` returns the bank statement of a specific person customer's account.
         - `addSpecificAccountTransactionTest`: tests if the method `addSpecificAccountTransaction` is adding a transaction to a specific person customer's account.
         - `validatePasswordTest`: tests if the method `validatePassword` is verifying if the password passed by parameter is the same as the one registered when the person customer was created in the system.
