@@ -3,8 +3,6 @@ package com.rangel;
 import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
@@ -18,14 +16,14 @@ public class TransactionTest {
         Transaction transaction = new Transaction(5_000.00, "Test");
         assertEquals(5_000.00, transaction.getAmount());
         assertEquals("Test", transaction.getDescription());
-        assertNull(transaction.getInstance());
+        assertNull(transaction.getInstant());
     }
 
     @Test
     @DisplayName("Tests the Getter method of the amount attribute.")
     void getAmountTest() {
         Transaction transaction = new Transaction(5_000.00, "Test");
-        assertEquals(3_000.00, transaction.getQuantia());
+        assertEquals(3_000.00, transaction.getAmount());
     }
 
     @Test
@@ -41,6 +39,6 @@ public class TransactionTest {
         Transaction transaction = new Transaction(3_000.00, "Test");
         String instant = transaction.returnInstant();
         String comparacaoInstante = transaction.returnInstant();
-        assertTrue(comparacaoInstante.split(":")[2].equals(returnInstant.split(":")[2]));
+        assertTrue(comparacaoInstante.split(":")[2].equals(instant.split(":")[2]));
     }
 }
