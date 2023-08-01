@@ -26,7 +26,7 @@ public class PersonCustomerTest {
         new PersonCustomer("John", "00000000000", "12345");
 
         System.setOut(defaultOutput);
-        assertTrue(outputStream.toString().contains("PersonCustomer object instantiated successfully!"));
+        assertTrue(outputStream.toString().contains("PersonCustomer object successfully instantiated!"));
     }
 
     @Test
@@ -57,7 +57,7 @@ public class PersonCustomerTest {
 
     @Test
     @DisplayName("Tests if the method Return Id Specific Account of the person customer.")
-    void returnIdSpecificAccountTest() {
+    void returnSpecificAccountIdTest() {
         PersonCustomer customer = new PersonCustomer("John", "00000000000", "12345");
 
         Account account = new Account("", customer, new Bank());
