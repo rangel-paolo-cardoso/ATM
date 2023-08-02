@@ -16,15 +16,15 @@ public class BankTest {
 
     @Test
     @DisplayName("Tests the generator of unique number to a new account.")
-    void generateNewAccountNumberTest() {
+    public void generateNewAccountNumberTest() {
         Bank bank = new Bank();
-        assertTrue(bank.generateNewAccountNumber() instanceof String);
-        assertEquals(10, bank.generateNewAccountNumber().length());
+        assertTrue(bank.generateNumberNewAccount() instanceof String);
+        assertEquals(10, bank.generateNumberNewAccount().length());
     }
 
     @Test
     @DisplayName("Tests the Add Person Customer method, returning the object person customer.")
-    void addPersonCustomerTest() {
+    public void addPersonCustomerTest() {
         Bank bank = new Bank();
         String name = "John Test";
         String cpf = "00000000000";
@@ -35,7 +35,7 @@ public class BankTest {
 
     @Test
     @DisplayName("Tests the login method of the Person Customer, returning the object person customer correctly.")
-    void personCustomerLoginTest() {
+    public void personCustomerLoginTest() {
         Bank bank = new Bank();
         String name = "John";
         String cpf = "00000000000";
@@ -49,7 +49,7 @@ public class BankTest {
 
     @Test
     @DisplayName("Tests if the Transfer Funds method is transferring correctly.")
-    void depositTestTransferFundsTestShowBalanceStatementTest() {
+    public void depositTestTransferFundsTestShowBalanceStatementTest() {
         Bank bank = new Bank();
         bank.addPersonCustomer("John", "00000000000", "12345");
 
@@ -79,9 +79,9 @@ public class BankTest {
 
     @Test
     @DisplayName("Tests if the Withdraw method is working correctly.")
-    void depositTestWithdrawTestShowBalanceStatementTest() {
+    public void depositTestWithdrawTestShowBalanceStatementTest() {
         Bank bank = new Bank();
-        bank.adicionarPessoaCliente("John", "00000000000", "12345");
+        bank.addPersonCustomer("John", "00000000000", "12345");
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(outputStream);

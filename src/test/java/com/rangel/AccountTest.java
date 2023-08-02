@@ -1,6 +1,5 @@
 package com.rangel;
 
-import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -16,16 +15,16 @@ public class AccountTest {
 
     @Test
     @DisplayName("Tests the constructor method of the class Account.")
-    void constructorTest() {
+    public void constructorTest() {
         PersonCustomer customer = new PersonCustomer("John", "00000000000", "12345");
         Account account = new Account("Savings", customer, new Bank());
         assertTrue(account.getAccountType().equals("Savings"));
-        assertNull(account.getPersonCustomer());
+        assertNotNull(account.getPersonCustomer());
     }
 
     @Test
     @DisplayName("Tests the method Add Transaction and returns the account balance.")
-    void addTransactionTestReturnBalanceTest() {
+    public void addTransactionTestReturnBalanceTest() {
         PersonCustomer customer = new PersonCustomer("John", "00000000000", "12345");
         Account account = new Account("Savings", customer, new Bank());
         assertEquals(0, account.returnBalance());
@@ -35,17 +34,17 @@ public class AccountTest {
 
     @Test
     @DisplayName("Tests if the method Return Account Summary is returning a String with the values correctly.")
-    void returnAccountSummaryTest() {
+    public void returnAccountSummaryTest() {
         PersonCustomer customer = new PersonCustomer("John", "00000000000", "12345");
         Account account = new Account("Savings", customer, new Bank());
         account.addTransaction(5_000.00, "Test");
 
-        assertTrue(account.returnAccountSummary().contains(": R$5000.00 : Savings"));
+        assertTrue(account.returnAccountSummary().contains(": R$5000,00 : Savings"));
     }
 
     @Test
     @DisplayName("Tests if the method Return Balance Statement is printing the values correctly.")
-    void retornarExtratoTest() {
+    public void retornarExtratoTest() {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(outputStream);
 
@@ -59,12 +58,12 @@ public class AccountTest {
         account.returnBalanceStatement();
 
         System.setOut(defaultOutput);
-        assertTrue(outputStream.toString().contains(" -------- Test: R$5000.00 +"));
+        assertTrue(outputStream.toString().contains(" -------- Test: R$5000,00 +"));
     }
 
     @Test
     @DisplayName("Tests if the Getter method of the attribute accountId is returning.")
-    void getAccountIdTest() {
+    public void getAccountIdTest() {
         PersonCustomer customer = new PersonCustomer("John", "00000000000", "12345");
         Account account = new Account("Savings", customer, new Bank());
 
@@ -73,7 +72,7 @@ public class AccountTest {
 
     @Test
     @DisplayName("Tests if the Getter method of the attribute personCustomer is returning.")
-    void getPersonCustomerTest() {
+    public void getPersonCustomerTest() {
         PersonCustomer customer = new PersonCustomer("John", "00000000000", "12345");
         Account account = new Account("Savings", customer, new Bank());
 
