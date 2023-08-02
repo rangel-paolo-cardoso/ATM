@@ -1,8 +1,6 @@
 package com.rangel;
 
-import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.ByteArrayOutputStream;
@@ -16,7 +14,7 @@ public class PersonCustomerTest {
 
     @Test
     @DisplayName("Tests the PersonCustomer class constructor.")
-    void constructorTest() {
+    public void constructorTest() {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(outputStream);
 
@@ -31,7 +29,7 @@ public class PersonCustomerTest {
 
     @Test
     @DisplayName("Tests if the method Add Account and the method Return Number Of Accounts are working.")
-    void addAccountTestReturnNumberOfAccountsTest() {
+    public void addAccountTestReturnNumberOfAccountsTest() {
         PersonCustomer customer = new PersonCustomer("John", "00000000000", "12345");
         assertEquals(0, customer.returnNumberOfAccounts());
 
@@ -43,7 +41,7 @@ public class PersonCustomerTest {
 
     @Test
     @DisplayName("Tests if the method return Specific Account Balance of the person customer.")
-    void returnSpecificAccountBalanceTest() {
+    public void returnSpecificAccountBalanceTest() {
         PersonCustomer customer = new PersonCustomer("John", "00000000000", "12345");
 
         Account account = new Account("", customer, new Bank());
@@ -57,7 +55,7 @@ public class PersonCustomerTest {
 
     @Test
     @DisplayName("Tests if the method Return Id Specific Account of the person customer.")
-    void returnSpecificAccountIdTest() {
+    public void returnSpecificAccountIdTest() {
         PersonCustomer customer = new PersonCustomer("John", "00000000000", "12345");
 
         Account account = new Account("", customer, new Bank());
@@ -69,7 +67,7 @@ public class PersonCustomerTest {
 
     @Test
     @DisplayName("Tests if the method Return Account Statement of the person customer.")
-    void returnSpecificAccountStatementTest() {
+    public void returnSpecificAccountStatementTest() {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(outputStream);
 
@@ -78,7 +76,7 @@ public class PersonCustomerTest {
 
         PersonCustomer customer = new PersonCustomer("John", "00000000000", "12345");
         Account account = new Account("Savings", customer, new Bank());
-        account.addTransaction(5_000.00, "Teste 1");
+        account.addTransaction(5_000.00, "Test 1");
         customer.addAccount(account);
 
         customer.returnSpecificAccountStatement(0);
@@ -89,7 +87,7 @@ public class PersonCustomerTest {
 
     @Test
     @DisplayName("Tests if the method Add Specific Account Transaction of the person customer.")
-    void addSpecificAccountTransactionTest() {
+    public void addSpecificAccountTransactionTest() {
         PersonCustomer customer = new PersonCustomer("John", "00000000000", "12345");
 
         Account account = new Account("Savings", customer, new Bank());
@@ -104,7 +102,7 @@ public class PersonCustomerTest {
 
     @Test
     @DisplayName("Tests the method Validate Password.")
-    void validatePasswordTest() {
+    public void validatePasswordTest() {
         String senha = "12345";
         PersonCustomer customer = new PersonCustomer("John", "00000000000", "12345");
 
@@ -113,7 +111,7 @@ public class PersonCustomerTest {
 
     @Test
     @DisplayName("Tests the method Return Accounts Summary.")
-    void returnAccountsSummaryTest() {
+    public void returnAccountsSummaryTest() {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(outputStream);
 
@@ -134,7 +132,7 @@ public class PersonCustomerTest {
 
     @Test
     @DisplayName("Tests if the Getter method of the attribute cpf is returning.")
-    void getCpfTest() {
+    public void getCpfTest() {
         PersonCustomer customer = new PersonCustomer("John", "00000000000", "12345");
         assertTrue(customer.getCpf().equals("00000000000"));
     }
